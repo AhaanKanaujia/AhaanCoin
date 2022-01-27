@@ -100,15 +100,15 @@ class Blockchain {
         }
 
         if (!transaction.is_valid()) {
-            throw new Error('Invalid Transaction!')
+            throw new Error('Invalid Transaction!');
         }
 
         if (transaction.amount <= 0) {
-            throw new Error('Invalid Transaction! Amount less than 0.')
+            throw new Error('Invalid Transaction! Amount less than 0.');
         }
         console.log("Transaction Sender Address: " + transaction.sender_address);
         if (this.get_address_balance(transaction.sender_address) < transaction.amount) {
-            throw new Error('Invalid Transaction! Insufficient balance.')
+            throw new Error('Invalid Transaction! Insufficient balance.');
         }
 
         this.pending_transactions.push(transaction);
